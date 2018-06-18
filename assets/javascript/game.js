@@ -5,14 +5,14 @@ var computerWins = 0;
 var remainingGuess = 10;
 var keyPress;
 var letterGuess;
+var computerPick;
 
 var guessedLetters = [];
 
-var computerPick = allChoices[Math.floor(Math.random() * allChoices.length)];
 
 //This is everything that occurs when keys are pressed
 document.onkeyup = function (guess) {
-    keyPress = guess.key
+    keyPress = guess.key;
     letterGuess = keyPress.toLowerCase();
 
     //This prevents invalid inputs and duplicates
@@ -40,6 +40,14 @@ document.onkeyup = function (guess) {
 
 }
 
+function startGame() {
+    //These start on the page and disappear once the game starts
+    document.getElementById("taunt").textContent = "";
+    document.getElementById("instructions").textContent = "";
+    document.getElementById("gamestart").remove();
+    endRound();
+}
+
 //This sets the number of remaining guesses
 function remainingGuesses() {
     remainingGuess = 10 - guessedLetters.length;
@@ -53,8 +61,3 @@ function endRound() {
     document.getElementById("compscore").textContent = computerWins;
     computerPick = allChoices[Math.floor(Math.random() * allChoices.length)];
 }
-
-//These start on the page and disappear once the game starts
-document.getElementById("taunt").textContent = "";
-document.getElementById("instructions").textContent = "";
-
