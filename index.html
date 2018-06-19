@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Eater" rel="stylesheet">
         
         <script
         src="http://code.jquery.com/jquery-3.3.1.min.js"
@@ -24,9 +25,15 @@
 
         <h3 id="instructions">Press a letter to guess my letter.  You only get 10 tries before I win</h3>
 
+        <br></br>
+
         <button id="gamestart" onclick="startGame()">Start Game</button>
 
+        <br></br>
+
         <div id="game">
+
+            <div class="left">
 
             wins: <span id="yourscore"></span>
 
@@ -34,13 +41,17 @@
 
             losses: <span id="compscore"></span>
 
-            <br></br>
+            </div>
+
+            <div class="right">
 
             guesses remaining: <span id="guessremain"></span>
 
             <br></br>
 
             guessed letters: <span id="alreadyUsedLetters"></span>
+
+            </div>
 
         </div>
 

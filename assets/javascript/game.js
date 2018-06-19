@@ -20,9 +20,9 @@ document.onkeyup = function (guess) {
 
         //This builds the array of guesses and writes to the screen
         guessedLetters.push(letterGuess);
+        remainingGuesses();
         document.getElementById("guessremain").textContent = remainingGuess;
         document.getElementById("alreadyUsedLetters").textContent = guessedLetters.join(", ");
-        remainingGuesses();
 
         //This is the check for conditional for winning
         if (letterGuess === computerPick) {
